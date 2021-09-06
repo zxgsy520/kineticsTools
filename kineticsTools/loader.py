@@ -20,9 +20,10 @@ def getIpdModelFilename(ipdModel, majorityChem, paramsPath):
         return ipdModel
 
     if majorityChem == 'unknown':
-        msg = "Chemistry cannot be identified---cannot perform kinetic analysis"
-        LOG.error(msg)
-        raise Exception(msg)
+        majorityChem = "P6-C4"
+        #msg = "Chemistry cannot be identified---cannot perform kinetic analysis"
+        #LOG.error(msg)
+        #raise Exception(msg)
 
     # Route any pre-Kiwi / pre-SSB Sequel chemistries to Seabiscuit training
     if majorityChem.startswith("S/P1") or majorityChem.startswith("S/P2"):
